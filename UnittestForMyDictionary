@@ -1,0 +1,41 @@
+import unittest
+import MyDictionary
+
+# Initialize a new dictionary
+my_test_dictionary = MyDictionary.Dictionary()
+#Initialize the size of dictionary
+my_test_dictionary.Constructor(100)
+
+
+class TestMyDictionary(unittest.TestCase):
+    '''Unittest for the dictionary module'''
+
+    def test_dictionary_get_function(self):
+        my_test_dictionary['susan'] = 'bhattarai'
+        actual = my_test_dictionary['susan']
+        expected = 'bhattarai'
+        self.assertEqual(actual, expected)
+
+
+    def test_dictionary_get_function(self):
+        #Trying to access a key which is not in dictionary
+        actual = my_test_dictionary['Haha']
+        expected = -1
+        self.assertEqual(actual, expected)
+
+
+    def test_dictionary_del_function(self):
+        my_test_dictionary['sumit'] = 98450
+        actual = my_test_dictionary.Delete('sumit')
+        #Deletion function deletes and returns the value which is deleted
+        expected = 98450
+
+        self.assertEqual(actual, expected)
+
+
+if __name__ == '__main__':
+    unittest.main(exit = False)
+    
+        
+
+    
